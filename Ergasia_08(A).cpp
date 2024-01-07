@@ -46,22 +46,7 @@ int main(void){
 					printf("\t\t\t |\t\6%d \t\t |\n", xa);
 				}
 		}
-		if(y == 16){
-			if(xa == 11){
-				printf("\t\t\t |\t\t J \t |\n", xa);
-			}else if(xa == 12){
-				printf("\t\t\t |\t\t Q \t |\n", xa);
-			}else if(xa == 13){
-				printf("\t\t\t |\t\t K \t |\n", xa);
-			}else if(symbol == 1){
-				printf("\t\t\t |\t\t \3%d \t |\n", xa);
-			}else if(symbol == 2){
-				printf("\t\t\t |\t\t \4%d \t |\n", xa);
-			}else if(symbol == 3){
-				printf("\t\t\t |\t\t \5%d \t |\n", xa);
-			}else if(symbol == 4){
-				printf("\t\t\t |\t\t \6%d \t |\n", xa);
-			}
+
 		}
 		
 	}
