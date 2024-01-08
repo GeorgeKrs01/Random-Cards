@@ -9,14 +9,22 @@ int z;
 int xa;
 int input;
 int symbol;
+int value;
+
+char cardValues[] = {'J', 'Q', 'K'};
 
 
 int main(void){
 	
+	
+	
 	do{
+		
 		srand (time(NULL));
 		xa = 1 + (rand() % 13);
 		symbol = 1+(rand() % 4);
+		
+		
 			x = 0;
 			y = 0;	
 			z = 0;
@@ -31,13 +39,11 @@ int main(void){
 					printf("\t\t\t | \t\t\t | \n");
 					
 					if(y == 3){
-						if(xa == 11){
-							printf("\t\t\t |\t J \t\t |\n", xa);
-						}else if(xa == 12){
-							printf("\t\t\t |\t Q \t\t |\n", xa);
-						}else if(xa == 13){
-							printf("\t\t\t |\t K \t\t |\n", xa);
-						}else if(symbol == 1){
+						if(xa >= 11){
+							value = xa - 11;
+							printf("\t\t\t |\t %c \t\t |\n", cardValues[value]);
+						}
+						else if(symbol == 1){
 								system("COLOR FC");	
 								printf("\t\t\t |\t\3%d \t\t |\n", xa);
 							}else if(symbol == 2){
@@ -52,13 +58,11 @@ int main(void){
 							}
 					}
 					if(y == 16){
-						if(xa == 11){
-							printf("\t\t\t |\t\t J \t |\n", xa);
-						}else if(xa == 12){
-							printf("\t\t\t |\t\t Q \t |\n", xa);
-						}else if(xa == 13){
-							printf("\t\t\t |\t\t K \t |\n", xa);
-						}else if(symbol == 1){
+						if(xa >= 11){
+							value = xa - 11;
+							printf("\t\t\t |\t\t %c \t |\n", cardValues[value]);
+						}
+						else if(symbol == 1){
 							system("COLOR FC");
 							printf("\t\t\t |\t\t \3%d \t |\n", xa);
 						}else if(symbol == 2){
@@ -92,6 +96,8 @@ int main(void){
 					}else {
 						printf("Invalid Input");
 					}
+					
+
 	}while(input == 0);
 	
 
