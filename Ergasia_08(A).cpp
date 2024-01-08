@@ -3,7 +3,7 @@
 #include <math.h>
 #include <time.h>
 
-int  x;
+int x;
 int y;
 int z;
 int xa;
@@ -37,16 +37,39 @@ int main(void){
 			}else if(xa == 13){
 				printf("\t\t\t |\t K \t\t |\n", xa);
 			}else if(symbol == 1){
+					system("COLOR FC");	
 					printf("\t\t\t |\t\3%d \t\t |\n", xa);
 				}else if(symbol == 2){
+					system("COLOR FC");
 					printf("\t\t\t |\t\4%d \t\t |\n", xa);
 				}else if(symbol == 3){
+					system("COLOR F0");
 					printf("\t\t\t |\t\5%d \t\t |\n", xa);
 				}else if(symbol == 4){
+					system("COLOR F0");
 					printf("\t\t\t |\t\6%d \t\t |\n", xa);
 				}
 		}
-
+		if(y == 16){
+			if(xa == 11){
+				printf("\t\t\t |\t\t J \t |\n", xa);
+			}else if(xa == 12){
+				printf("\t\t\t |\t\t Q \t |\n", xa);
+			}else if(xa == 13){
+				printf("\t\t\t |\t\t K \t |\n", xa);
+			}else if(symbol == 1){
+				system("COLOR FC");
+				printf("\t\t\t |\t\t \3%d \t |\n", xa);
+			}else if(symbol == 2){
+				system("COLOR FC");
+				printf("\t\t\t |\t\t \4%d \t |\n", xa);
+			}else if(symbol == 3){
+				system("COLOR F0");
+				printf("\t\t\t |\t\t \5%d \t |\n", xa);
+			}else if(symbol == 4){
+				system("COLOR F0");
+				printf("\t\t\t |\t\t \6%d \t |\n", xa);
+			}
 		}
 		
 	}
@@ -55,14 +78,17 @@ int main(void){
 		z++;
 		printf("\t\t\t  ----------------------- \n");
 	}
-	
-	
-	
-	scanf("%d", &input);
-	
-	printf("Next Card: Nal(0), Exit(1)");
-	
-	system("PAUSE");
-	return 0;
-	
+
+}
+int restart(){
+		printf("Next Card: Nal(0), Exit(1)");
+	scanf("%d", &input);	
+	if(input == 0 ){
+		system("CLS");
+	}else if(input == 1){
+		system("PAUSE");
+		return 0;	
+	}else {
+		printf("Invalid Input");
+	}
 }
