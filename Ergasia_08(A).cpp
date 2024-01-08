@@ -12,83 +12,87 @@ int symbol;
 
 
 int main(void){
-
-
-	srand (time(NULL));
-	xa = 1 + (rand() % 13);
-	symbol = 1+(rand() % 4);
 	
-
-	
-	
-	while(x<1){
-		x++;
-		printf("\t\t\t  ----------------------- \n");
-	}
-	while(y < 20){
-		y++;
-		printf("\t\t\t | \t\t\t | \n");
+	do{
+		srand (time(NULL));
+		xa = 1 + (rand() % 13);
+		symbol = 1+(rand() % 4);
+			x = 0;
+			y = 0;	
+			z = 0;
 		
-		if(y == 3){
-			if(xa == 11){
-				printf("\t\t\t |\t J \t\t |\n", xa);
-			}else if(xa == 12){
-				printf("\t\t\t |\t Q \t\t |\n", xa);
-			}else if(xa == 13){
-				printf("\t\t\t |\t K \t\t |\n", xa);
-			}else if(symbol == 1){
-					system("COLOR FC");	
-					printf("\t\t\t |\t\3%d \t\t |\n", xa);
-				}else if(symbol == 2){
-					system("COLOR FC");
-					printf("\t\t\t |\t\4%d \t\t |\n", xa);
-				}else if(symbol == 3){
-					system("COLOR F0");
-					printf("\t\t\t |\t\5%d \t\t |\n", xa);
-				}else if(symbol == 4){
-					system("COLOR F0");
-					printf("\t\t\t |\t\6%d \t\t |\n", xa);
+		
+				while(x<1){
+					x++;
+					printf("\t\t\t  ----------------------- \n");
 				}
-		}
-		if(y == 16){
-			if(xa == 11){
-				printf("\t\t\t |\t\t J \t |\n", xa);
-			}else if(xa == 12){
-				printf("\t\t\t |\t\t Q \t |\n", xa);
-			}else if(xa == 13){
-				printf("\t\t\t |\t\t K \t |\n", xa);
-			}else if(symbol == 1){
-				system("COLOR FC");
-				printf("\t\t\t |\t\t \3%d \t |\n", xa);
-			}else if(symbol == 2){
-				system("COLOR FC");
-				printf("\t\t\t |\t\t \4%d \t |\n", xa);
-			}else if(symbol == 3){
-				system("COLOR F0");
-				printf("\t\t\t |\t\t \5%d \t |\n", xa);
-			}else if(symbol == 4){
-				system("COLOR F0");
-				printf("\t\t\t |\t\t \6%d \t |\n", xa);
-			}
-		}
-		
-	}
+				while(y < 20){
+					y++;
+					printf("\t\t\t | \t\t\t | \n");
+					
+					if(y == 3){
+						if(xa == 11){
+							printf("\t\t\t |\t J \t\t |\n", xa);
+						}else if(xa == 12){
+							printf("\t\t\t |\t Q \t\t |\n", xa);
+						}else if(xa == 13){
+							printf("\t\t\t |\t K \t\t |\n", xa);
+						}else if(symbol == 1){
+								system("COLOR FC");	
+								printf("\t\t\t |\t\3%d \t\t |\n", xa);
+							}else if(symbol == 2){
+								system("COLOR FC");
+								printf("\t\t\t |\t\4%d \t\t |\n", xa);
+							}else if(symbol == 3){
+								system("COLOR F0");
+								printf("\t\t\t |\t\5%d \t\t |\n", xa);
+							}else if(symbol == 4){
+								system("COLOR F0");
+								printf("\t\t\t |\t\6%d \t\t |\n", xa);
+							}
+					}
+					if(y == 16){
+						if(xa == 11){
+							printf("\t\t\t |\t\t J \t |\n", xa);
+						}else if(xa == 12){
+							printf("\t\t\t |\t\t Q \t |\n", xa);
+						}else if(xa == 13){
+							printf("\t\t\t |\t\t K \t |\n", xa);
+						}else if(symbol == 1){
+							system("COLOR FC");
+							printf("\t\t\t |\t\t \3%d \t |\n", xa);
+						}else if(symbol == 2){
+							system("COLOR FC");
+							printf("\t\t\t |\t\t \4%d \t |\n", xa);
+						}else if(symbol == 3){
+							system("COLOR F0");
+							printf("\t\t\t |\t\t \5%d \t |\n", xa);
+						}else if(symbol == 4){
+							system("COLOR F0");
+							printf("\t\t\t |\t\t \6%d \t |\n", xa);
+						}
+					}
+					
+				}
+				
+				while(z<1){
+					z++;
+					printf("\t\t\t  ----------------------- \n");
+				}
+				
+				
+				printf("Next Card: Nal(0), Exit(1)");
+				scanf("%d", &input);	
+					if(input == 0 ){
+						system("CLS");
+					}else if(input == 1){
+						system("PAUSE");
+						system("CLS");
+						return 0;	
+					}else {
+						printf("Invalid Input");
+					}
+	}while(input == 0);
 	
-	while(z<1){
-		z++;
-		printf("\t\t\t  ----------------------- \n");
-	}
 
-}
-int restart(){
-		printf("Next Card: Nal(0), Exit(1)");
-	scanf("%d", &input);	
-	if(input == 0 ){
-		system("CLS");
-	}else if(input == 1){
-		system("PAUSE");
-		return 0;	
-	}else {
-		printf("Invalid Input");
-	}
 }
