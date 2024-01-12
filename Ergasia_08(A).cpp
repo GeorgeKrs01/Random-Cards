@@ -23,10 +23,14 @@ int main(void){
 		xa = 1 + (rand() % 13);
 		symbol = 1+(rand() % 4);
 		
+//		Too much Complexity
+//		int colorCode = (symbol == 1 || symbol == 2) ? system("COLOR FC") : (symbol == 3 || symbol == 4) ? system("COLOR F0") : 0;
+
 			x = 0;
 			y = 0;	
 			z = 0;
-		
+			
+			            		
 		
 				while(x<1){
 					x++;
@@ -39,6 +43,7 @@ int main(void){
 					if(y == 3){
 						if(xa >= 11){
 							value = xa - 11;
+							
 //							J/Q/K
 							if(symbol == 1 || symbol == 2){
 								system("COLOR FC");	
