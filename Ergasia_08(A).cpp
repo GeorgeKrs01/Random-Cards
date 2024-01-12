@@ -10,12 +10,11 @@ int xa;
 int input;
 int symbol;
 int value;
-
 char cardValues[] = {'J', 'Q', 'K'};
-
+char symbolChars[] = {'\3', '\4', '\5', '\6'};
 
 int main(void){
-	
+		
 	
 	
 	do{
@@ -23,7 +22,6 @@ int main(void){
 		srand (time(NULL));
 		xa = 1 + (rand() % 13);
 		symbol = 1+(rand() % 4);
-		
 		
 			x = 0;
 			y = 0;	
@@ -41,40 +39,52 @@ int main(void){
 					if(y == 3){
 						if(xa >= 11){
 							value = xa - 11;
-							printf("\t\t\t |\t %c \t\t |\n", cardValues[value]);
-						}
-						else if(symbol == 1){
+//							J/Q/K
+							if(symbol == 1 || symbol == 2){
 								system("COLOR FC");	
-								printf("\t\t\t |\t\3%d \t\t |\n", xa);
-							}else if(symbol == 2){
-								system("COLOR FC");
-								printf("\t\t\t |\t\4%d \t\t |\n", xa);
-							}else if(symbol == 3){
+								printf("\t\t\t |\t%c%c \t\t |\n", symbolChars[symbol - 1],cardValues[value]);
+							}else if(symbol == 3 || symbol == 4){
+								system("COLOR F0");	
+								printf("\t\t\t |\t%c%c \t\t |\n", symbolChars[symbol - 1],cardValues[value]);
+							}
+						}
+//						Numbers
+						else if(symbol == 1 || symbol == 2){
+								system("COLOR FC");	
+								printf("\t\t\t |\t%c%d \t\t |\n", symbolChars[symbol - 1], xa);
+							}else if(symbol == 3 || symbol == 4){
 								system("COLOR F0");
-								printf("\t\t\t |\t\5%d \t\t |\n", xa);
-							}else if(symbol == 4){
-								system("COLOR F0");
-								printf("\t\t\t |\t\6%d \t\t |\n", xa);
+								printf("\t\t\t |\t%c%d \t\t |\n", symbolChars[symbol - 1], xa);
 							}
 					}
+					
+					
+//					Center Symbol
+					if(y == 10){	
+						printf("\t\t\t |\t     %c    \t |\n", symbolChars[symbol - 1]);
+					}
+					
+//					Second Half
 					if(y == 16){
 						if(xa >= 11){
 							value = xa - 11;
-							printf("\t\t\t |\t\t %c \t |\n", cardValues[value]);
+//							J/Q/K
+							if(symbol == 1 || symbol == 2){
+								system("COLOR FC");	
+								printf("\t\t\t |\t\t%c%c \t |\n", symbolChars[symbol - 1],cardValues[value]);
+							}else if(symbol == 3 || symbol == 4){
+								system("COLOR F0");	
+								printf("\t\t\t |\t\t%c%c \t |\n", symbolChars[symbol - 1],cardValues[value]);
+							}
 						}
-						else if(symbol == 1){
-							system("COLOR FC");
-							printf("\t\t\t |\t\t \3%d \t |\n", xa);
-						}else if(symbol == 2){
-							system("COLOR FC");
-							printf("\t\t\t |\t\t \4%d \t |\n", xa);
-						}else if(symbol == 3){
-							system("COLOR F0");
-							printf("\t\t\t |\t\t \5%d \t |\n", xa);
-						}else if(symbol == 4){
-							system("COLOR F0");
-							printf("\t\t\t |\t\t \6%d \t |\n", xa);
-						}
+//						Numbers
+						else if(symbol == 1 || symbol == 2){
+								system("COLOR FC");	
+								printf("\t\t\t |\t\t%c%d \t |\n", symbolChars[symbol - 1], xa);
+							}else if(symbol == 3 || symbol == 4){
+								system("COLOR F0");
+								printf("\t\t\t |\t\t%c%d \t |\n", symbolChars[symbol - 1], xa);
+							}
 					}
 					
 				}
